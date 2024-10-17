@@ -59,17 +59,6 @@ button:hover {
   margin-top: 20px;
 }
 
-.MuiGrid-item {
-  display: flex;
-  justify-content: center;
-}
-
-.MuiCard-root {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
 .total-price{
   text-align: right;
   padding-right: 10px;
@@ -103,18 +92,6 @@ button:hover {
 @media (min-width: 1024px) {
   .products-container {
     padding: 40px;
-  }
-
-  .MuiGrid-container {
-    justify-content: flex-start;
-  }
-
-  .MuiGrid-item {
-    width: 33.333%;
-  }
-
-  .MuiCard-root {
-    max-width: 350px;
   }
 
   button {

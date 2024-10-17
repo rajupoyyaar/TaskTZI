@@ -5,6 +5,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import { DataGrid } from '@mui/x-data-grid';
 import './AddProducts.css';
 
 const AddProducts = () => {
@@ -36,6 +37,22 @@ const AddProducts = () => {
     dispatch(setProducts(updatedProducts));
     setFormData({ name: "", quantity: "", price: "", description: "" });
   };
+
+  const columns = [
+    { field: 'id', headerName: 'ID', width: 70 },
+    { field: 'name', headerName: 'Product Name', width: 200 },
+    { field: 'price', headerName: 'Price', width: 100 },
+    { field: 'quantity', headerName: 'Quantity', width: 100 },
+    { field: 'description', headerName: 'Description', width: 250 },
+  ];
+  
+  const productRows = products.map((product, index) => ({
+    id: index + 1,
+    name: product.name,
+    price: product.price,
+    quantity: product.quantity,
+    description: product.description,
+  }));
 
   return (
     <div className="products-container">
@@ -88,7 +105,7 @@ const AddProducts = () => {
         <button type="submit">Add Product</button>
       </form>
 
-      <div className="products">
+      {/* <div className="products">
         <h2>Product Details</h2>
         <Grid container spacing={2}>
           {products.map((product, index) => (
@@ -112,15 +129,26 @@ const AddProducts = () => {
             </Grid>
           ))}
         </Grid>
+      </div> */}
+
+      <div className="products">
+        <h2>Product Details</h2>
+        <div style={{ height: 400, width: '100%' }}>
+          <DataGrid
+            rows={productRows}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+          />
+        </div>
       </div>
 
       <div className="total-price">
         <h3>Total Price: ₹{total}</h3>
-        {total > 1000000 && (
-          <h3>
-            Tax: {total <= 1500000 ? '12%' : total <= 2000000 ? '16%' : '20%'}
-          </h3>
-        )}
+        <h3>
+          Tax: {total <= 1500000 ? '12%' : total <= 2000000 ? '16%' : '20%'}
+        </h3>
       </div>
   </div>
   );

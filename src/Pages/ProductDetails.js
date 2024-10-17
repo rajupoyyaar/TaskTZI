@@ -9,8 +9,6 @@ import {useSelector} from 'react-redux'
 function ProductDetails() {
   const storedCustomerDetails = JSON.parse(localStorage.getItem("CustomerDetails")) || {};
   const products = storedCustomerDetails.ProductDetails
-  // console.log("products1",products1)
-  // const products = JSON.parse(localStorage.getItem("ProductDetails")) || [];
 
   return (
     <div className="products">
