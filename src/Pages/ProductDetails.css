@@ -1,7 +1,91 @@
-.products-container{
-
-}
-
-.products-container h2{
+/* Container for the product grid */
+.products {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h2 {
     text-align: center;
-}
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for each product card */
+  .product-card {
+    transition: transform 0.3s ease;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Typography */
+  .MuiTypography-root {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Responsive Design */
+  
+  /* Mobile devices */
+  @media (max-width: 600px) {
+    .products {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    .product-card {
+      padding: 10px;
+    }
+  
+    .MuiTypography-h6 {
+      font-size: 18px;
+    }
+  
+    .MuiTypography-body2 {
+      font-size: 14px;
+    }
+  }
+  
+  /* Tablets and small desktops */
+  @media (min-width: 601px) and (max-width: 900px) {
+    .products {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 28px;
+    }
+  
+    .MuiTypography-h6 {
+      font-size: 20px;
+    }
+  
+    .MuiTypography-body2 {
+      font-size: 16px;
+    }
+  }
+  
+  /* Larger desktops */
+  @media (min-width: 901px) {
+    .products {
+      padding: 20px;
+    }
+  
+    h2 {
+      font-size: 32px;
+    }
+  
+    .MuiTypography-h6 {
+      font-size: 22px;
+    }
+  
+    .MuiTypography-body2 {
+      font-size: 18px;
+    }
+  }
+  

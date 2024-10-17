@@ -10,8 +10,8 @@ function App() {
     <div>
        <Navbar />
        <Routes>
-         <Route exact path='/' element={<ProductDetails />} />
-         <Route path='/customer-details' element={<CustomerDetails />} />
+         {/* <Route exact path='/' element={<ProductDetails />} /> */}
+         <Route exact path='/' element={<CustomerDetails />} />
          <Route path='add-products' element={<AddProducts />} />
        </Routes>
     </div>

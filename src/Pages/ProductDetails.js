@@ -4,13 +4,16 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import "./ProductDetails.css"
+import {useSelector} from 'react-redux'
 
 function ProductDetails() {
-  const products = JSON.parse(localStorage.getItem("ProductDetails")) || [];
-  console.log(products);
+  const storedCustomerDetails = JSON.parse(localStorage.getItem("CustomerDetails")) || {};
+  const products = storedCustomerDetails.ProductDetails
+  // console.log("products1",products1)
+  // const products = JSON.parse(localStorage.getItem("ProductDetails")) || [];
 
   return (
-    <div className="products-container">
+    <div className="products">
       <h2>Product Details</h2>
       <Grid container spacing={2}>
         {products.map((product, index) => (

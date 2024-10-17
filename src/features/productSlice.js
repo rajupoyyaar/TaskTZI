@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const storedCustomerDetails = JSON.parse(localStorage.getItem("CustomerDetails")) || {};
+const localStorageProductDetails = storedCustomerDetails.ProductDetails
+
 const initialState = {
-  products: JSON.parse(localStorage.getItem("ProductDetails")) || [],
+  products: localStorageProductDetails || [],
 };
 
 const productSlice = createSlice({
